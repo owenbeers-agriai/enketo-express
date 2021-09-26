@@ -84,7 +84,9 @@
         "valid-url": "^1.0.9",
         "vex-dialog-enketo": "github:enketo/vex-dialog-enketo#b6e0f01",
         "vex-js": "^4.1.0",
-        "xml2js": "^0.4.23"
+        "xml2js": "^0.4.23",
+        "esbuild": "^0.12.28",
+        "esbuild-plugin-alias": "^0.1.2"
     },
     "devDependencies": {
         "@baladins/grunt-nodemon": "^0.4.6",
@@ -94,10 +96,6 @@
         "chai": "^4.3.4",
         "chai-as-promised": "^7.1.1",
         "docdash": "^1.2.0",
-        "esbuild": "^0.12.28",
-        "esbuild-plugin-alias": "^0.1.2",
-        "eslint-plugin-jsdoc": "^36.1.0",
-        "eslint-plugin-unicorn": "^36.0.0",
         "grunt-concurrent": "^3.0.0",
         "grunt-contrib-watch": "^1.1.0",
         "grunt-eslint": "^23.0.0",
