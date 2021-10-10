@@ -9,9 +9,11 @@ header.form-header
       a.form-header__branding(href=`${logo.href || '#'}`)
         .logo-wrapper
           img(src=`${logo.source}`, alt="brand logo")
+          img(src=`${logo.source}`, alt="brand logo")
     else
       .form-header__branding
         .logo-wrapper
+          img(src=`${logo.source}`, alt="brand logo")
           img(src=`${logo.source}`, alt="brand logo")
   .form-header__filler
   button.form-header__button--print.btn-bg-icon-only(onclick="return false;")
@@ -23,3 +25,23 @@ header.form-header
     input#toc-toggle.ignore(type="checkbox" value="show")                
     ul.pages-toc__list
     .pages-toc__overlay
+
+script.
+  script.
+  const query_params = new URLSearchParams(window.location.search)
+  const params = Object.fromEntries(query_params.entries());
+  const orgId = params['orgId']
+  if (orgId) {
+    fetch('https://beta.veritree.org/api/organizations/' + orgId ).then(response => {
+      if (response.status >= 200 && response.status < 300) {
+        response.json().then((content) => {
+          if (content.data && content.data.logo_url) {
+            const imageTag = document.getElementById('branding_icon')
+            if (imageTag) {
+              imageTag.src = content.data.logo_url
+            }
+          }
+        })
+      }
+    })
+  }
