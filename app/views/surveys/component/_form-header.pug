@@ -8,13 +8,11 @@ header.form-header
     if (logo.href)
       a.form-header__branding(href=`${logo.href || '#'}`)
         .logo-wrapper
-          img(src=`${logo.source}`, alt="brand logo")
-          img(src=`${logo.source}`, alt="brand logo")
+          img(src=`${logo.source}`, alt="brand logo", id="branding_icon")
     else
       .form-header__branding
         .logo-wrapper
-          img(src=`${logo.source}`, alt="brand logo")
-          img(src=`${logo.source}`, alt="brand logo")
+          img(src=`${logo.source}`, alt="brand logo", id="branding_icon")
   .form-header__filler
   button.form-header__button--print.btn-bg-icon-only(onclick="return false;")
   span.form-language-selector.hide: span(data-i18n='form.chooseLanguage')= t('form.chooseLanguage')
@@ -27,7 +25,6 @@ header.form-header
     .pages-toc__overlay
 
 script.
-  script.
   const query_params = new URLSearchParams(window.location.search)
   const params = Object.fromEntries(query_params.entries());
   const orgId = params['orgId']
