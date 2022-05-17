@@ -7,7 +7,8 @@ const chaiAsPromised = require( 'chai-as-promised' );
 const redis = require( 'redis' );
 const config = require( '../../app/models/config-model' ).server;
 const client = redis.createClient( config.redis.cache.port, config.redis.cache.host, {
-    auth_pass: config.redis.cache.password
+    auth_pass: config.redis.cache.password,
+    tls: {}
 } );
 const model = require( '../../app/models/cache-model' );
 

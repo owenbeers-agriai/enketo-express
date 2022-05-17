@@ -7,7 +7,8 @@ const redis = require( 'redis' );
 const config = require( '../../app/models/config-model' ).server;
 const model = require( '../../app/models/survey-model' );
 const client = redis.createClient( config.redis.main.port, config.redis.main.host, {
-    auth_pass: config.redis.main.password
+    auth_pass: config.redis.main.password,
+    tls: {}
 } );
 
 chai.use( chaiAsPromised );

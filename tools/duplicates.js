@@ -11,10 +11,12 @@
  */
 const config = require( '../app/models/config-model' ).server;
 const mainClient = require( 'redis' ).createClient( config.redis.main.port, config.redis.main.host, {
-    auth_pass: config.redis.main.password
+    auth_pass: config.redis.main.password,
+    tls: {}
 } );
 const cacheClient = require( 'redis' ).createClient( config.redis.cache.port, config.redis.cache.host, {
-    auth_pass: config.redis.cache.password
+    auth_pass: config.redis.cache.password,
+    tls: {}
 } );
 const fs = require( 'fs' );
 const path = require( 'path' );
