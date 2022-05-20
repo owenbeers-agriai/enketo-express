@@ -58,7 +58,8 @@ const prefix = 'ca:';
 const expiry = 30 * 24 * 60 * 60;
 const config = require( './config-model' ).server;
 const client = require( 'redis' ).createClient( config.redis.cache.port, config.redis.cache.host, {
-    auth_pass: config.redis.cache.password
+    auth_pass: config.redis.cache.password,
+    tls: {}
 } );
 const debug = require( 'debug' )( 'cache-model' );
 

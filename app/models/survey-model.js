@@ -8,7 +8,8 @@ const utils = require( '../lib/utils' );
 const TError = require( '../lib/custom-error' ).TranslatedError;
 const config = require( './config-model' ).server;
 const client = require( 'redis' ).createClient( config.redis.main.port, config.redis.main.host, {
-    auth_pass: config.redis.main.password
+    auth_pass: config.redis.main.password,
+    tls: {}
 } );
 const pending = {};
 const debug = require( 'debug' )( 'survey-model' );

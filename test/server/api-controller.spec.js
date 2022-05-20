@@ -14,7 +14,8 @@ const instanceModel = require( '../../app/models/instance-model' );
 const cacheModel = require( '../../app/models/cache-model' );
 const redis = require( 'redis' );
 const client = redis.createClient( config.redis.main.port, config.redis.main.host, {
-    auth_pass: config.redis.main.password
+    auth_pass: config.redis.main.password,
+    tls: {}
 } );
 let v1Survey;
 let v1Instance;
