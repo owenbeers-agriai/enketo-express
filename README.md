@@ -1,13 +1,10 @@
-[![Build Status](https://travis-ci.com/enketo/enketo-express.svg?branch=master)](https://travis-ci.org/enketo/enketo-express) [![Dependency Status](https://david-dm.org/enketo/enketo-express.svg)](https://david-dm.org/enketo/enketo-express) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/609aaf6fa764454f901f1c8a427264ff)](https://www.codacy.com/app/martijnr/enketo-express?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=enketo/enketo-express&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.com/enketo/enketo-express.svg?branch=master)](https://travis-ci.org/enketo/enketo-express) [![Dependency Status](https://david-dm.org/enketo/enketo-express.svg)](https://david-dm.org/enketo/enketo-express) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/609aaf6fa764454f901f1c8a427264ff)](https://www.codacy.com/app/martijnr/enketo-express?utm_source=github.com&utm_medium=referral&utm_content=enketo/enketo-express&utm_campaign=Badge_Grade)
 
-Enketo Express
-==============
+# Enketo Express
 
 _The modern [Enketo Smart Paper](https://enketo.org) web application._
 
-
 **To get started visit our [technical documentation](https://enketo.github.io/enketo-express).**
-
 
 ### Translation
 
@@ -15,11 +12,9 @@ The user interface was translated by: Serkan Tümbaş (Turkish), Hélène Martin
 
 _Send a message if you'd like to contribute! We use an easy web interface provided by [Transifex](https://www.transifex.com/projects/p/enketo-express/)._
 
-
 ### Funding
 
 The development of this application was funded by [KoBo Toolbox (Harvard Humanitarian Initiative)](http://www.kobotoolbox.org), [iMMAP](http://immap.org), [OpenClinica](https://openclinica.com), [London School of Hygiene and Tropical Medicine](https://opendatakit.lshtm.ac.uk/), [DIAL Open Source Center](https://www.osc.dial.community/) and [Enketo LLC](https://www.linkedin.com/company/enketo-llc). The [Enketo-core](https://github.com/enketo/enketo-core) library (the form engine + themes) used in this application obtained significant funding from [SEL (Columbia University)](http://modi.mech.columbia.edu/), the [Santa Fe Institute](http://www.santafe.edu/), [Ona](https://ona.io) and the [HRP project](http://www.who.int/reproductivehealth/topics/mhealth/en/).
-
 
 ### License
 
@@ -31,7 +26,21 @@ Note the 'Powered by Enketo' footer requirement as explained in [enketo-core](ht
 
 The Enketo logo and Icons are trademarked by [Enketo LLC](https://www.linkedin.com/company/enketo-llc) and should only be used for the 'Powered by Enketo' requirement mentioned above (if applicable). To prevent infringement simply replace the logo images in [/public/images](https://github.com/enketo/enketo-express/blob/master/public/images) with your own or contact [Enketo LLC](mailto:info@enketo.org) to discuss the use inside your app.
 
-
 ### Change log
 
 See [change log](https://github.com/enketo/enketo-express/blob/master/CHANGELOG.md)
+
+## Github Actions Workflows
+
+The `dev.yml` script on the `.github.workflows` directory is responsible to promote changes to the enketo dev environment. It does that by a series of steps:
+
+-   Build a new docker image from the source branch that triggered the workflow
+-   Push that image to the image repository(ECR)
+-   Run a helm upgrade command to make kubernetes pull and use the image with the new source code.
+
+This workflow is triggered by pushing a commit to a branch with the prefix `feat/*` or to `develop`.
+
+To create new workflows for different environments or isolated tasks please referr to the github action documentation(https://docs.github.com/en/actions) and add them to the `.github.workflows` directory.
+
+To follow the execution of a workflow please referr to
+[![Build Veritree API](https://github.com/tentree-org/vt-enketo-express/actions/workflows/dev.yml/badge.svg)](https://github.com/tentree-org/vt-enketo-express/actions/workflows/dev.yml)
