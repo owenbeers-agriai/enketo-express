@@ -30,6 +30,12 @@ $slider-width: 240px;
         right: 15px;
     }
 
+    .btn {
+        progress {
+            margin: 4px;
+        }
+    }
+
     &__button-bar {
         margin: 20px 0 33px 0;
     }
@@ -140,11 +146,6 @@ $slider-width: 240px;
         }
     }
 
-    &__upload-progress {
-        visibility: hidden;
-        width: 100%;
-    }
-
     &__records {
         list-style-type: none;
         padding: 0;
@@ -174,7 +175,7 @@ $slider-width: 240px;
                 border-color: red;
             }
 
-            &[data-draft=true] {
+            &[data-draft='true'] {
                 @extend .icon-pencil;
                 cursor: pointer;
                 border-color: #999999;
@@ -232,11 +233,11 @@ $slider-width: 240px;
     }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
     .record-list {
         &__records {
             &__record {
-                &[data-draft=true] {
+                &[data-draft='true'] {
                     &::before {
                         float: left;
                     }

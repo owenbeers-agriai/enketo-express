@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.com/enketo/enketo-express.svg?branch=master)](https://travis-ci.org/enketo/enketo-express) [![Dependency Status](https://david-dm.org/enketo/enketo-express.svg)](https://david-dm.org/enketo/enketo-express) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/609aaf6fa764454f901f1c8a427264ff)](https://www.codacy.com/app/martijnr/enketo-express?utm_source=github.com&utm_medium=referral&utm_content=enketo/enketo-express&utm_campaign=Badge_Grade)
+![coverage-shield-badge-1](https://img.shields.io/badge/coverage-79.1%25-yellow.svg)
+
+[![Build Status](https://travis-ci.com/enketo/enketo-express.svg?branch=master)](https://travis-ci.org/enketo/enketo-express)
 
 # Enketo Express
 
@@ -8,9 +10,28 @@ _The modern [Enketo Smart Paper](https://enketo.org) web application._
 
 ### Translation
 
-The user interface was translated by: Serkan Tümbaş (Turkish), Hélène Martin (French), Gurjot Sidhu(Hindi, Panjabi), "Abcmen" (Turkish), Otto Saldadze, Makhare Atchaidze, David Sichinava, Elene Ergeshidze (Georgian), Nancy Shapsough (Arabic), Noel O'Boyle (French), Miguel Moreno (Spanish), Tortue Torche (French), Bekim Kajtazi (Albanian), Marc Kreidler (German), Darío Hereñú (Spanish), Viktor S. (Russian), Alexander Torrado Leon (Spanish), Peter Smith (Portugese, Spanish), Przemysław Gumułka (Polish), Niklas Ljungkvist, Sid Patel (Swedish), Katri Jalava (Finnish), Francesc Garre (Spanish), Sounay Phothisane (Lao), Linxin Guo (Chinese), Emmanuel Jean, Renaud Gaudin (French), Trần Quý Phi (Vietnamese), Reza Doosti, Hossein Azad, Davood Mottalee (Persian), Tomas Skripcak (Slovak, Czech, German), Daniela Baldova (Czech), Robert Michael Lundin (Norwegian), Margaret Ndisha, Charles Mutisya (Swahili), Panzero Mauro (Italian), Gabriel Kreindler (Romanian), Jason Reeder, Omar Nazar, Sara Sameer, David Gessel (Arabic), Tino Kreutzer (German), Wasilis Mandratzis-Walz (German, Greek), Luis Molina (Spanish), Martijn van de Rijdt (Dutch).
+The user interface was translated by: Badisches Rotes Kreuz (German),Serkan Tümbaş (Turkish), Hélène Martin (French), Gurjot Sidhu(Hindi, Panjabi), "Abcmen" (Turkish), Otto Saldadze, Makhare Atchaidze, David Sichinava, Elene Ergeshidze (Georgian), Nancy Shapsough (Arabic), Noel O'Boyle (French), Miguel Moreno (Spanish), Tortue Torche (French), Bekim Kajtazi (Albanian), Marc Kreidler (German), Darío Hereñú (Spanish), Viktor S. (Russian), Alexander Torrado Leon (Spanish), Peter Smith (Portugese, Spanish), Przemysław Gumułka (Polish), Niklas Ljungkvist, Sid Patel (Swedish), Katri Jalava (Finnish), Francesc Garre (Spanish), Sounay Phothisane (Lao), Linxin Guo (Chinese), Emmanuel Jean, Renaud Gaudin (French), Trần Quý Phi (Vietnamese), Reza Doosti, Hossein Azad, Davood Mottalee (Persian), Tomas Skripcak (Slovak, Czech, German), Daniela Baldova (Czech), Robert Michael Lundin (Norwegian), Margaret Ndisha, Charles Mutisya (Swahili), Panzero Mauro (Italian), Gabriel Kreindler (Romanian), Jason Reeder, Omar Nazar, Sara Sameer, David Gessel (Arabic), Tino Kreutzer (German), Wasilis Mandratzis-Walz (German, Greek), Luis Molina (Spanish), Martijn van de Rijdt (Dutch).
 
 _Send a message if you'd like to contribute! We use an easy web interface provided by [Transifex](https://www.transifex.com/projects/p/enketo-express/)._
+
+### Releases
+
+1. Create release PR
+1. Check [Dependabot](https://github.com/enketo/enketo-express/security/dependabot) for alerts
+1. Run `npm update`
+    - Check if `node-forge` has been updated and if so, verify encrypted submissions end-to-end
+1. Run `npm audit`
+    - Run `npm audit fix --production` to apply most important fixes
+1. Run `npm ci`
+1. Run `npm test`
+1. Run `npm run build-docs`
+1. Update `CHANGELOG.md`
+1. Update version in `package.json`
+    - Bump to major version if consumers have to make changes.
+1. Merge PR with all changes
+1. Create GitHub release
+1. Tag and publish the release
+    - GitHub Action will publish it to npm
 
 ### Funding
 
